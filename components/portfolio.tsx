@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect"
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, Twitter } from "lucide-react"
@@ -35,8 +34,11 @@ export default function Portfolio() {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 {/* Profile Image */}
                 <div className="relative">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
-                    <img src="/professional-portrait.png" alt="Nitin Yadav" className="w-full h-full object-cover" />
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-xl bg-gray-700">
+                    {/* Replace with actual image or placeholder */}
+                    <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center text-white">
+                      NY
+                    </div>
                   </div>
                   <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
@@ -111,18 +113,22 @@ export default function Portfolio() {
                   <SkillPill>MongoDB</SkillPill>
                   <SkillPill>PostgreSQL</SkillPill>
                   <SkillPill>REST APIs</SkillPill>
+                  <SkillPill>Prisma</SkillPill>
+                  <SkillPill>Monorepos</SkillPill>
+                  <SkillPill>Websockets</SkillPill>
                 </div>
               </div>
 
               {/* Design & Tools */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-200">Design & Tools</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-200">Deployment</h3>
                 <div className="flex flex-wrap gap-3">
-                  <SkillPill>Figma</SkillPill>
-                  <SkillPill>Adobe Creative Suite</SkillPill>
                   <SkillPill>Git</SkillPill>
                   <SkillPill>VS Code</SkillPill>
-                  <SkillPill>Framer Motion</SkillPill>
+                  <SkillPill>AWS</SkillPill>
+                  <SkillPill>Vercel</SkillPill>
+                  <SkillPill>Docker</SkillPill>
+                  <SkillPill>CI/CD</SkillPill>
                 </div>
               </div>
             </div>
@@ -137,22 +143,18 @@ export default function Portfolio() {
               <ProjectCard
                 title="E-Commerce Platform"
                 description="A modern e-commerce platform with real-time inventory management"
-                imageQuery="modern+e-commerce+website"
               />
               <ProjectCard
                 title="Social Media Dashboard"
                 description="Analytics dashboard for social media management and insights"
-                imageQuery="analytics+dashboard+dark"
               />
               <ProjectCard
                 title="Task Management App"
                 description="Collaborative project management tool with real-time updates"
-                imageQuery="project+management+app"
               />
               <ProjectCard
                 title="Portfolio Website"
                 description="Personal portfolio showcasing creative work and skills"
-                imageQuery="portfolio+website+design"
               />
             </div>
           </div>
@@ -166,10 +168,10 @@ export default function Portfolio() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-white">
-                    Birla Institute of Technology and Sciences, Pilani
+                    Gyan Ganga Institute of Technology and Sciences, Jabalpur
                   </h3>
                   <p className="text-gray-300 mt-2">B.Tech in Computer Science Engineering</p>
-                  <p className="text-gray-400 mt-1">2020-2025</p>
+                  <p className="text-gray-400 mt-1">2023-2027</p>
                 </div>
               </div>
             </div>
@@ -219,20 +221,16 @@ function SkillPill({ children }: { children: React.ReactNode }) {
 function ProjectCard({
   title,
   description,
-  imageQuery,
 }: {
   title: string
   description: string
-  imageQuery: string
 }) {
   return (
     <div className="group backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-      <div className="aspect-video overflow-hidden">
-        <img
-          src={`/.jpg?height=400&width=600&query=${imageQuery}`}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
+      <div className="aspect-video overflow-hidden bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+        <div className="text-white text-4xl font-bold opacity-50">
+          {title.split(' ').map(word => word[0]).join('')}
+        </div>
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
