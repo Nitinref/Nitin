@@ -6,6 +6,7 @@ import {
   Github, Linkedin, Mail, Twitter, Moon, Sun, ExternalLink, 
   Menu, X, FileText, Download, Copy, Check, ArrowRight 
 } from "lucide-react"
+
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import { TbBrandLeetcode } from 'react-icons/tb';
@@ -38,7 +39,8 @@ export default function NitinPortfolio() {
     { icon: Github, link: "https://github.com/Nitinref", label: "GitHub" },
     { icon: Linkedin, link: "https://www.linkedin.com/in/nitin-yadav-8979b12aa/", label: "LinkedIn" },
     { icon: TbBrandLeetcode, link: "https://leetcode.com/nitinref", label: "LeetCode" },
-    { icon: Mail, link: "mailto:nitinyadav484220@gmail.com", label: "Email" }
+    { icon: Mail, link: "mailto:nitinyadav484220@gmail.com", label: "Email" },
+    { icon: FileText, link: "/2.pdf", label: "Resume" }
   ]
 
   const projects = [
@@ -354,8 +356,8 @@ export default function NitinPortfolio() {
               </div>
               
               <a 
-                href="/resume.pdf" 
-                download="Nitin_Yadav_Resume.pdf"
+                href="/2.pdf" 
+                download="/2.pdf"
                 className={`
                   flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all
                   ${isDark 
